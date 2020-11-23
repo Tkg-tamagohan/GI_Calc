@@ -1,0 +1,60 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+header {
+    text-align: center;
+    font-size: 30px;
+}
+
+.input {
+    text-align: center;
+
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.inputs {
+    text-align: center;
+    margin: 0;
+}
+
+.base {
+    background-color: lightcyan;
+}
+
+.main {
+    background-color: beige;
+   
+}
+
+input {
+    font-size: 20px;
+    width: 50px;
+    text-align: right;
+
+}
+
+#critLabel, #VMLabel {
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px  solid black;
+    background-color: #fff;
+}
+
+#crit, #VapoMelt {
+    display: none;
+}
+
+#critDmgRate {
+    background-color: #fff;
+}
+
+input[type="radio"] {
+    width: auto;
+}
+
+#damage {
+    width: auto;
+}
