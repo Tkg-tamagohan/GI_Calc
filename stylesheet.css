@@ -36,15 +36,19 @@ input {
 
 }
 
-#critLabel, #VMLabel {
+#critLabel, #VMLabel, #meanLabel {
     border-radius: 5px;
     cursor: pointer;
     border: 1px  solid black;
     background-color: #fff;
 }
 
-#crit, #VapoMelt {
+#crit, #VapoMelt,#mean {
     display: none;
+}
+
+#critRate, #meanLabel {
+    background-color: gray;
 }
 
 #critDmgRate {

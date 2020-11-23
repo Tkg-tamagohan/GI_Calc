@@ -28,6 +28,25 @@ $("#crit").change(function(){
     }
 });
 
+$("#mean").change(function(){
+    if($(this).prop("checked")){
+        $("#critRate").css('background-color','#fff');
+        $("#meanLabel").css('background-color','#fff');
+        $("#critRate").prop("disabled",false);
+        $("#critDmgRate").css('background-color','#fff');
+        $("#critLabel").css('background-color','#fff');
+        $("#critDmgRate").prop("disabled",false);
+        // console.log("true");
+        // console.log($(this).prop("checked"))
+    } else {
+        $("#critRate").css('background-color','gray');
+        $("#meanLabel").css('background-color','gray');
+        $("#critRate").prop("disabled",true);
+        // console.log("false");
+        // console.log($(this).prop("checked"));
+    }
+});
+
 $("#VapoMelt").change(function(){
     if($(this).prop("checked")){
         $("#VMLabel").css('background-color','#fff');
