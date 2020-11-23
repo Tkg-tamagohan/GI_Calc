@@ -7,7 +7,7 @@ $("#displayCalc").click(function(){
     // console.log(ATKrate);
     // console.log(ATKvalue);
 
-    var displayATK = baseATK * ATKrate + ATKvalue;
+    var displayATK = baseATK * (1 + ATKrate/100) + ATKvalue;
     $("#displayATK").val(displayATK);
 });
 
