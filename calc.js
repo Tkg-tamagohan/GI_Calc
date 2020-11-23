@@ -80,8 +80,13 @@ $("#dmgCalc").click(function(){
 
     if($("#crit").prop("checked")){
         critDmgRate = parseFloat($("#critDmgRate").val());
+        
     }else{
         critDmgRate = 0.0;
+    }
+
+    if($("#mean").prop("checked")){
+        critDmgRate *= parseFloat($("#critRate").val())/100;
     }
 
     if($("#VapoMelt").prop("checked")){
