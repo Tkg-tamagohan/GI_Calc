@@ -1,3 +1,8 @@
+$(document).ready(function(){
+    $("#critRate").parent().css('color','lightgray');
+    $("#rate20").css('color','lightgray');
+});
+
 $("#displayCalc").click(function(){
     var baseATK = parseFloat($("#baseATK").val());
     var ATKrate = parseFloat($("#ATKrate").val());
@@ -14,14 +19,16 @@ $("#displayCalc").click(function(){
 
 $("#crit").change(function(){
     if($(this).prop("checked")){
-        $("#critDmgRate").css('background-color','#fff');
-        $("#critLabel").css('background-color','#fff');
+        $("#critDmgRate").parent().css('color','black');
+        $("#critDmgRate").css('color','black');
+        $("#critLabel").css('color','black');
         $("#critDmgRate").prop("disabled",false);
         // console.log("true");
         // console.log($(this).prop("checked"))
     } else {
-        $("#critDmgRate").css('background-color','gray');
-        $("#critLabel").css('background-color','gray');
+        $("#critDmgRate").parent().css('color','lightgray');
+        $("#critDmgRate").css('color','lightgray');
+        $("#critLabel").css('color','lightgray');
         $("#critDmgRate").prop("disabled",true);
         // console.log("false");
         // console.log($(this).prop("checked"));
@@ -30,17 +37,19 @@ $("#crit").change(function(){
 
 $("#mean").change(function(){
     if($(this).prop("checked")){
-        $("#critRate").css('background-color','#fff');
-        $("#meanLabel").css('background-color','#fff');
+        $("#critRate").parent().css('color','black');
+        $("#critRate").css('color','black');
+        $("#meanLabel").css('color','black');
         $("#critRate").prop("disabled",false);
-        $("#critDmgRate").css('background-color','#fff');
-        $("#critLabel").css('background-color','#fff');
+        $("#critDmgRate").parent().css('color','black');
+        $("#critLabel").css('color','black');
         $("#critDmgRate").prop("disabled",false);
         // console.log("true");
         // console.log($(this).prop("checked"))
     } else {
-        $("#critRate").css('background-color','gray');
-        $("#meanLabel").css('background-color','gray');
+        $("#critRate").parent().css('color','lightgray');
+        $("#critRate").css('color','lightgray');
+        $("#meanLabel").css('color','lightgray');
         $("#critRate").prop("disabled",true);
         // console.log("false");
         // console.log($(this).prop("checked"));
@@ -49,19 +58,40 @@ $("#mean").change(function(){
 
 $("#VapoMelt").change(function(){
     if($(this).prop("checked")){
-        $("#VMLabel").css('background-color','#fff');
-        $("#VapoMeltRate").css('background-color','#fff');
+        $("#VMLabel").css('color','black');
+        $("#VapoMeltRate").css('color','black');
+        $("#VapoMeltRate").parent().css('color','black');
         $("#VapoMeltRate").prop("disabled",false);
+        $("input[name=VM]:checked").parent().css('color','black');
+        $("#rate20").children("input").prop("disabled",false);
+        $("#rate15").children("input").prop("disabled",false);
+
         // console.log("true");
         // console.log($(this).prop("checked"))
     } else {
-        $("#VMLabel").css('background-color','gray');
-        $("#VapoMeltRate").css('background-color','gray');
+        $("#VMLabel").css('color','lightgray');
+        $("#VapoMeltRate").css('color','lightgray');
+        $("#VapoMeltRate").parent().css('color','lightgray');
         $("#VapoMeltRate").prop("disabled",true);
+        $("#rate20").css('color','lightgray');
+        $("#rate15").css('color','lightgray');
+        $("#rate20").children("input").prop("disabled",true);
+        $("#rate15").children("input").prop("disabled",true);
         // console.log("false");
         // console.log($(this).prop("checked"));
     }
 });
+
+$("input[name='VM']").change(function(){
+    console.log($(this).val());
+    if($(this).val()=="2.0"){
+        $("#rate20").css('color','black');
+        $("#rate15").css('color','lightgray');
+    } else{
+        $("#rate15").css('color','black');
+        $("#rate20").css('color','lightgray');
+    }
+})
 
 $("#dmgCalc").click(function(){
     var displayATK = parseFloat($("#displayATK").val());
