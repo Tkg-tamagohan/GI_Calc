@@ -39,12 +39,12 @@
                 <p class="input"><br></p>
                 <div class="input">
                     <p><label for="ATKrate">攻撃力倍率</label></p>
-                    <p><input type="number" id="ATKrate" value="0">%</p>
+                    <p><input type="number" id="ATKrate" value="0.0">%</p>
                 </div>
                 <p class="input"><br></p>
                 <div class="input">
                     <p><label for="ATKvalue">攻撃力固定値</label></p>
-                    <p><input type="number" id="ATKvalue" value="0"></p>
+                    <p><input type="number" id="ATKvalue" value="0.0"></p>
                 </div>
                 <p><button id="displayCalc" type="button">表示攻撃力計算</button></p>
             </div>
@@ -56,13 +56,13 @@
                 <p><label for="crit" id="critLabel">会心発生</label>
                     <input type="checkbox" name="" id="crit" checked></p>
                     <p><label for="critDmgRate">会心ダメージ倍率</label></p>
-                <p><input type="number" id="critDmgRate" value="50">％</p>
+                <p><input type="number" id="critDmgRate" value="50.0">％</p>
             </div>
             <div class="input">
                 <p><label for="mean" id="meanLabel">期待値計算モード</label>
                     <input type="checkbox" name="" id="mean"></p>
                     <p><label for="critRate">会心率</label></p>
-                <p><input type="number" id="critRate" value="5">％</p>
+                <p><input type="number" id="critRate" value="5.0">％</p>
             </div>
         </div>
 
@@ -75,18 +75,18 @@
                 <p>
                     <label id="rate15"><input type="radio" name="VM" checked value="1.5">×1.5</label>
                     <label id="rate20"><input type="radio" name="VM" value="2.0" >×2.0</label>
-                    <input type="number" id="VapoMeltRate" value="0">％</p>
+                    <input type="number" id="VapoMeltRate" value="0.0">％</p>
             </div>
         </div>
 
         <div class="inputs main">
             <div class="input">
                 <p><label for="resistance">属性耐性</label></p>
-                <p><input type="number" id="resistance" value="10">％</p>
+                <p><input type="number" id="resistance" value="10.0">％</p>
             </div>
             <div class="input">
                 <p><label for="resDebuff">属性デバフ</label></p>
-                <p><input type="number" id="resDebuff" value="0">％</p>
+                <p><input type="number" id="resDebuff" value="0.0">％</p>
             </div>
             <div class="input">
                 <p><label for="level">自身のレベル</label></p>
@@ -99,7 +99,7 @@
 
             <div class="input">
                 <p><label for="defDebuff">防御デバフ</label></p>
-                <p><input type="number" id="defDebuff" value="0">％</p>
+                <p><input type="number" id="defDebuff" value="0.0">％</p>
             </div>
             
             <p><button id="dmgCalc" type="button">ダメージ計算</button></p>

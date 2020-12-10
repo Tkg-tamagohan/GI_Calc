@@ -102,8 +102,8 @@ $("#dmgCalc").click(function(){
     var resRate;
     var resistance = parseFloat($("#resistance").val());
     var resDebuff = parseFloat($("#resDebuff").val());
-    var level = parseFloat($("#level").val());
-    var enemyLv = parseFloat($("#enemyLv").val());
+    var level = parseInt($("#level").val());
+    var enemyLv = parseInt($("#enemyLv").val());
     var defDebuff = parseFloat($("#defDebuff").val());
 
     // console.log("calc!");
@@ -116,16 +116,16 @@ $("#dmgCalc").click(function(){
     }
 
     if($("#mean").prop("checked")){
-        critDmgRate *= parseFloat($("#critRate").val())/100;
+        critDmgRate *= parseFloat($("#critRate").val())/100.0;
     }
 
     if($("#VapoMelt").prop("checked")){
-        VapoMeltRate = parseFloat($("input[name=VM]:checked").val()) * (1 + parseFloat($("#VapoMeltRate").val()/100));
+        VapoMeltRate = parseFloat($("input[name=VM]:checked").val()) * (1.0 + parseFloat($("#VapoMeltRate").val()/100.0));
     }else{
         VapoMeltRate = 1.0;
     }
     
-    var ATK = displayATK * skillRate/100 * (1 + elementalRate/100) * (1 + critDmgRate/100) * VapoMeltRate;
+    var ATK = displayATK * skillRate/100.0 * (1.0 + elementalRate/100.0) * (1.0 + critDmgRate/100.0) * VapoMeltRate;
     
     // console.log(ATK);
 
@@ -133,17 +133,20 @@ $("#dmgCalc").click(function(){
 
     // console.log(resdiff);
 
-    if(resdiff < 0){
-        resRate = resdiff/2;
-    } else if(resdiff >= 0 && resdiff < 75){
-        resRate = resdiff;
+    if(resdiff < 0.0){
+        resRate = resdiff/2.0;
     } else {
-        resRate = 1/(4 * resdiff + 1);
-    }
+        resRate = resdiff;
+    } 
+    // else {
+    //     resRate = 1/(4 * resdiff + 1);
+    // }
 
-    var def = (level+100)/((1-defDebuff/100)*(enemyLv+100)+(level+100));
+    var def = (level+100.0)/((1.0-(defDebuff/100.0))*(enemyLv+100.0)+(level+100.3));
 
-    var damage = ATK * (1 - resRate/100) * def;
+    console.log(def);
+
+    var damage = ATK * (1.0 - resRate/100.0) * def;
 
     // console.log(resRate);
     // console.log(def);
