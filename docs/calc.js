@@ -142,7 +142,7 @@ $("#dmgCalc").click(function(){
     //     resRate = 1/(4 * resdiff + 1);
     // }
 
-    var def = (level+100.0)/((1.0-(defDebuff/100.0))*(enemyLv+100.0)+(level+100.3));
+    var def = (level+100.0)/((1.0-(defDebuff/100.0))*(enemyLv+100.3)+(level+100.0));
 
     console.log(def);
 
