@@ -78,6 +78,26 @@
                     <input type="number" id="VapoMeltRate" value="0.0">％</p>
             </div>
         </div>
+        <details>
+            <summary>元素熟知から計算</summary>
+            <div class="inputs base">
+                <div class="input">
+                    <p><label for="elementalMastery">元素熟知</label></p>
+                    <p><input type="number" id="elementalMastery" value="0"></p>
+                </div>
+                <p class="input"><br></p>
+                <div class="input">
+                    <p><label for="VMDisplay">蒸発・溶解</label></p>
+                    <p>+<input type="number" id="VMDisplay" value="0.0">%</p>
+                </div>
+                <p class="input"><br></p>
+                <div class="input">
+                    <p><label for="EMDisplay">その他</label></p>
+                    <p>+<input type="number" id="EMDisplay" value="0.0">%</p>
+                </div>
+                <p><button id="EMCalc" type="button">倍率計算</button></p>
+            </div>
+        </details>
 
         <div class="inputs main">
             <div class="input">

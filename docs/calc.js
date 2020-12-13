@@ -56,6 +56,19 @@ $("#mean").change(function(){
     }
 });
 
+$('#EMCalc').click(function(){
+    var elementalMastery = parseFloat($('#elementalMastery').val());
+    var VMDisplay = 25 * elementalMastery /(9*(elementalMastery+1400)) *100;
+    var EMDisplay = VMDisplay * 2.4;
+    console.log(elementalMastery)
+    console.log(VMDisplay)
+    console.log(EMDisplay)
+
+    $("#VapoMeltRate").val(VMDisplay.toFixed(1));
+    $("#VMDisplay").val(VMDisplay.toFixed(1));
+    $("#EMDisplay").val(EMDisplay.toFixed(1));
+});
+
 $("#VapoMelt").change(function(){
     if($(this).prop("checked")){
         $("#VMLabel").css('color','black');
