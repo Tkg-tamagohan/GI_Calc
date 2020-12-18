@@ -146,20 +146,24 @@ $("#dmgCalc").click(function(){
 
     // console.log(resdiff);
 
-    if(resdiff < 0.0){
-        resRate = resdiff/2.0;
-    } else {
-        resRate = resdiff;
+    if(resdiff < 0.0 && resistance < 0.0){
+        resRate = 1 - (resistance - resDebuff/2)/100;
+    } else if(resdiff < 0.0 && resistance >= 0.0){
+        resRate = 1 - resdiff/200;
+    } else if(resdiff >= 0.0 && resdiff <= 75.0){
+        resRate = 1 - resdiff/100;
     } 
-    // else {
-    //     resRate = 1/(4 * resdiff + 1);
-    // }
+    else {
+        resRate = 1/(4 * resdiff/100 + 1);
+    }
+
+    // console.log(resRate);
 
     var def = (level+100.0)/((1.0-(defDebuff/100.0))*(enemyLv+100.0)+(level+100.3));
+    
+    // console.log(def);
 
-    console.log(def);
-
-    var damage = ATK * (1.0 - resRate/100.0) * def;
+    var damage = ATK * resRate * def;
 
     // console.log(resRate);
     // console.log(def);
