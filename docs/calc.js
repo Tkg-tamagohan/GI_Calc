@@ -60,9 +60,9 @@ $('#EMCalc').click(function(){
     var elementalMastery = parseFloat($('#elementalMastery').val());
     var VMDisplay = 25 * elementalMastery /(9*(elementalMastery+1400)) *100;
     var EMDisplay = VMDisplay * 2.4;
-    console.log(elementalMastery)
-    console.log(VMDisplay)
-    console.log(EMDisplay)
+    // console.log(elementalMastery)
+    // console.log(VMDisplay)
+    // console.log(EMDisplay)
 
     $("#VapoMeltRate").val(VMDisplay.toFixed(1));
     $("#VMDisplay").val(VMDisplay.toFixed(1));
@@ -96,7 +96,7 @@ $("#VapoMelt").change(function(){
 });
 
 $("input[name='VM']").change(function(){
-    console.log($(this).val());
+    // console.log($(this).val());
     if($(this).val()=="2.0"){
         $("#rate20").css('color','black');
         $("#rate15").css('color','lightgray');
